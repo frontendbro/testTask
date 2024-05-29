@@ -12,7 +12,10 @@ const FormPage = () => {
   const handleSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault()
-      console.log('Form data:', formData)
+
+      if (formData.name && formData.email) {
+        console.log('Form data:', formData)
+      }
     },
     [formData],
   )
