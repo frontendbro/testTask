@@ -1,12 +1,11 @@
 import useSWR from 'swr'
-import { fetcher } from '../../helpers/fetcher'
 import Post from './components/Post'
 
 import { IPost } from './index.d'
 import styled from '@emotion/styled'
 
 const PostsPage = () => {
-  const { data, error } = useSWR('http://jsonplaceholder.typicode.com/posts', fetcher)
+  const { data, error } = useSWR('http://jsonplaceholder.typicode.com/posts')
 
   return (
     <div>
