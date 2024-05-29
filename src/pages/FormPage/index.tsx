@@ -9,14 +9,6 @@ const FormPage = () => {
     email: '',
   })
 
-  const handleSubmit = useCallback(
-    (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault()
-      console.log('Form data:', formData)
-    },
-    [formData],
-  )
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     setFormData({
@@ -24,6 +16,14 @@ const FormPage = () => {
       [name]: value,
     })
   }
+
+  const handleSubmit = useCallback(
+    (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault()
+      console.log('Form data:', formData)
+    },
+    [formData],
+  )
 
   return (
     <div>
